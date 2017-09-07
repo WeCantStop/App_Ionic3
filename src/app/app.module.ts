@@ -15,7 +15,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      // 隐藏子路由的tab栏
+      tabsHideOnSubPages: 'true'}
+      )
   ],
   bootstrap: [IonicApp],
   entryComponents: [

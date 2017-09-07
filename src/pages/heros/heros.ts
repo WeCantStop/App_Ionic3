@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
-@IonicPage({name: 'heros'})
+@IonicPage({
+    name: 'heros',
+    segment: 'heros/:heroId'
+})
 @Component({
     selector: 'page-heros',
     templateUrl: 'heros.html'
