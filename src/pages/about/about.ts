@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ActionSheetController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {ActionSheetController, IonicPage} from 'ionic-angular';
 
-import { HerosPage } from "../heros/heros"
+import {HerosPage} from "../heros/heros"
 
+
+@IonicPage({name: 'about'})
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+    selector: 'page-about',
+    templateUrl: 'about.html'
 })
 export class AboutPage {
 
-  constructor(
-      public navCtrl: NavController,
-      public actionSheetCtrl: ActionSheetController
-      ) { };
-    action(){
+    constructor(public navCtrl: NavController,
+                public actionSheetCtrl: ActionSheetController) {
+    };
+
+    action() {
         let actionSheet = this.actionSheetCtrl.create({
             title: '确定删除吗',
             buttons: [
@@ -24,12 +26,12 @@ export class AboutPage {
                     handler: () => {
                         console.log('Destructive clicked');
                     }
-                },{
+                }, {
                     text: 'Archive',
                     handler: () => {
                         console.log('Archive clicked');
                     }
-                },{
+                }, {
                     text: 'Cancel',
                     role: 'cancel',
                     handler: () => {
@@ -41,7 +43,7 @@ export class AboutPage {
         actionSheet.present();
     }
 
-    gotoHero(){
-        this.navCtrl.push(HerosPage);
+    gotoHero() {
+        this.navCtrl.push(HerosPage, {heroId: 21});
     }
 }

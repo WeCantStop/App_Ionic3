@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component, OnInit} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 
 @Component({
-  selector: 'page-heros',
-  templateUrl: 'heros.html'
+    selector: 'page-heros',
+    templateUrl: 'heros.html'
 })
-export class HerosPage {
+export class HerosPage implements OnInit {
 
-  constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public params: NavParams) {
 
-  }
+    }
+
+    ngOnInit() {
+        console.log(this.params.get('heroId'));
+    }
 
 }
