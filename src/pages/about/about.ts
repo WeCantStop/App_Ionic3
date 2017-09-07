@@ -2,9 +2,6 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ActionSheetController, IonicPage} from 'ionic-angular';
 
-import {HerosPage} from "../heros/heros"
-
-
 @IonicPage({name: 'about'})
 @Component({
     selector: 'page-about',
@@ -44,6 +41,6 @@ export class AboutPage {
     }
 
     gotoHero() {
-        this.navCtrl.push(HerosPage, {heroId: 21});
+        this.navCtrl.push('heros', {heroId: 21});
     }
 }

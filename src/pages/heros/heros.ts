@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
+@IonicPage({name: 'heros'})
 @Component({
     selector: 'page-heros',
     templateUrl: 'heros.html'
